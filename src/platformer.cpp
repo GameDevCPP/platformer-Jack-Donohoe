@@ -1,6 +1,6 @@
 #include "engine.h"
-#include "game.h"
-#include "scenes/scene_menu.h"
+#include "../lab_7_platformer/game.h"
+#include "../lab_7_platformer/scenes/scene_menu.h"
 
 using namespace std;
 
