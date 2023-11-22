@@ -96,7 +96,7 @@ void PhysicsComponent::render() {}
 
 void PhysicsComponent::impulse(const sf::Vector2f& i) {
   auto a = b2Vec2(i.x, i.y * -1.0f);
-  _body->ApplyLinearImpulseToCenter(a, true);
+  _body->ApplyLinearImpulse(a, _body->GetWorldCenter() ,true);
 }
 
 void PhysicsComponent::dampen(const sf::Vector2f& i) {
@@ -130,8 +130,8 @@ bool PhysicsComponent::isTouching(const PhysicsComponent& pc,
   return false;
 }
 
-std::vector<const b2Contact const*> PhysicsComponent::getTouching() const {
-  std::vector<const b2Contact const*> ret;
+std::vector<const b2Contact *> PhysicsComponent::getTouching() const {
+  std::vector<const b2Contact *> ret;
 
   b2ContactEdge* edge = _body->GetContactList();
   while (edge != NULL) {

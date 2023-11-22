@@ -1,9 +1,6 @@
-//
-// Created by Denis Flynn on 21/11/2022.
-//
-//platformer.cpp
 #include "engine.h"
-#include "game.h"
+#include "../lab_7_platformer/game.h"
+#include "../lab_7_platformer/scenes/scene_menu.h"
 
 using namespace std;
 

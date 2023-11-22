@@ -6,6 +6,7 @@
 #include <iostream> // std::cout, std::fixed
 #include <sstream>
 #include <vector>
+#include <cstdint>
 
 namespace sf {
 
@@ -51,6 +52,12 @@ static double deg2rad(double degrees) {
   return degrees * 4.0 * atan(1.0) / 180.0;
 }
 
+//ToDo check what this method should actually do
+template <typename T>
+static double degrees(T deg) {
+    return (double)deg;
+}
+
 template <typename T>
 Vector2<T> rotate(const Vector2<T>& v, const double degrees) {
   const double theta = deg2rad(degrees);
@@ -79,3 +86,4 @@ std::string toStrDecPt(const uint16_t& dp, const T& i) {
   stream << std::fixed << std::setprecision(dp) << i;
   return stream.str();
 }
+
